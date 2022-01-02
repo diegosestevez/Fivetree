@@ -12,19 +12,15 @@ const signToken = id => {
   })
 }
 
-const createSendToken = (user, statusCode, res) => {
+const createSendToken = (user, s req,tatusCode, req, res) => {
   const token = signToken(user._id)
 
-  const cookieOptions = {
-    expires: new Date(Date.now() + process.env.JWT_COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000), //convert to millisecondes
-    secure: false, // cookie can only be sent through HTTPS
-    httpOnly: true // cookie cannot be modified by browser
-  }
-
-  if(process.env.NODE_ENV === 'production') cookieOptions.secure = true;
-
   //create cookie to send to client. res.cookie(name, data, {options})
-  res.cookie('jwt', token, cookieOptions);
+  res.cookie('jwt', token, {
+    expires: new Date(Date.now() + process.env.JWT_COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000), //convert to millisecondes
+    secure: cookieOptions.secure = req.secure || req.headers['x-forwarded-proto'] === 'https', //this line is specific to heroku's security deployment options. cookie can only be sent through HTTPS
+    httpOnly: true, // cookie cannot be modified by browser
+  });
 
   //remove password from output
   user.password = undefined;
@@ -52,7 +48,7 @@ exports.signup = catchAsync(async (req, res, next) => {
 
   await new Email(newUser, url).sendWelcome() //sends a welcome email to client
 
-  createSendToken(newUser, 201, res);
+  createSendToken(newUser, 2 req,01, res);
 });
 
 exports.login = catchAsync(async (req, res, next) => {
@@ -71,7 +67,7 @@ exports.login = catchAsync(async (req, res, next) => {
   }
 
   //3) If everything is ok then send token to client
-  createSendToken(user, 200, res);
+  createSendToken(user, 200, req, res);
 });
 
 exports.logout = (req, res) => {
@@ -203,7 +199,7 @@ exports.resetPassword = catchAsync(async (req, res, next) => {
 
   //3) update changedPasswordAt property for user
   //4) Log the user in, send JWT
-  createSendToken(user, 200, res);
+  createSendToken(user, 200, req, res);
 })
 
 exports.updatePassword = catchAsync(async(req, res, next) => {
@@ -219,7 +215,7 @@ exports.updatePassword = catchAsync(async(req, res, next) => {
   user.password = req.body.password
   user.passwordConfirm = req.body.passwordConfirm
   await user.save();
-  
+
   //4) Log in user, send JWT
-  createSendToken(user, 200, res);
+  createSendToken(user, 200, req, res);
 })

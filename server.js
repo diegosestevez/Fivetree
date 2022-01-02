@@ -24,7 +24,7 @@ mongoose.connect(DB, {
   console.log('DB connection successful!')
 })
 
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 3000;
 
 const server = app.listen(port, () => {
   console.log(`running on port ${port}...`);
@@ -36,5 +36,14 @@ process.on('unhandledRejection', err => {
   console.log('UNHANDLED REJECTION! Shutting app down.')
   server.close(() => {
     process.exit(1)
+  })
+})
+
+//SIGTERM is a heroku specific event. This line prevents request from hanging when heroku's containers are restarted every 24 hours
+process.on('SIGTERM', () => {
+  console.log('SIGTERM RECEIVED. Shutting app down gracefully.')
+  server.close(() => {
+    console.log('process terminated');
+    //process.exit not necessary heroku shuts down app automatically
   })
 })
