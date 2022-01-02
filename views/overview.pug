@@ -1,0 +1,53 @@
+extends base
+
+block content
+  .hero
+    .hero_container
+      .hero_elements
+        img.hero_logo(src='img/fivetree_logo.svg')
+        h1.hero_blurb Your destination for unforgettable tour experiences
+      .hero_cta
+        a.btn.btn--green.btn--small(href=`#main`) View Tours
+        if !user
+          a.btn.btn--white.btn--small(href=`/login`) Login to Book
+  main.main#main
+    .card-container
+
+      each tour in tours
+        .card
+          .card__header
+            .card__picture
+              .card__picture-overlay &nbsp;
+              img.card__picture-img(src=`/img/tours/${tour.imageCover}`, alt=`${tour.name}`)
+            h3.heading-tertirary
+              span= tour.name
+
+          .card__details
+            h4.card__sub-heading= `${tour.difficulty} ${tour.duration}-day tour`
+            p.card__text= tour.summary
+            .card__info
+              .card__data
+                svg.card__icon
+                  use(xlink:href='/img/icons.svg#icon-map-pin')
+                span= tour.startLocation.description
+              .card__data
+                svg.card__icon
+                  use(xlink:href='/img/icons.svg#icon-calendar')
+                span= tour.startDates[0].toLocaleString('en-us', {month:'long', year: 'numeric'})
+              .card__data
+                svg.card__icon
+                  use(xlink:href='/img/icons.svg#icon-flag')
+                span= `${tour.locations.length} stops`
+              .card__data
+                svg.card__icon
+                  use(xlink:href='/img/icons.svg#icon-user')
+                span= `${tour.maxGroupSize} people`
+
+          .card__footer
+            p
+              span.card__footer-value= `$${tour.price} `
+              span.card__footer-text per person
+            p.card__ratings
+              span.card__footer-value= tour.ratingsAverage.toFixed(1)
+              span.card__footer-text= ` rating (${tour.ratingsQuantity})`
+            a.btn.btn--green.btn--small(href=`/tour/${tour.slug}#`) Details

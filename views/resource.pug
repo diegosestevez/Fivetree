@@ -1,0 +1,24 @@
+extends base
+
+block content
+  main.main
+    .user-view
+      .user-view__content
+        .user-view__form-container
+          h1.heading-secondary.ma-bt-md= `${title}`
+
+          if (title === 'about')
+            h2 Fivetree is an online e-commerce shop which specializes in promoting tour related services geared towards North American outdoor enthusiasts. Fivetree was created in 2018 by two friends as a way of connecting people with a desire to explore new places but who are not sure where to go or how to get started.
+
+          if (title === 'contact')
+            h2 Fivetree Inc.
+            h2| 123 Davie St.
+            h2| Vancouver BC V6G 1V9,
+            h2| Canada
+
+          if (title === 'careers')
+            h2 There are currently no opportunities with Fivetree. Please come back later.
+
+          if (title === 'guides')
+            h2 For information on becoming a guide for Fivetree please submit your inquiry to
+              a(href='mailto:admin@fivetree.com')  admin@fivetree.com
