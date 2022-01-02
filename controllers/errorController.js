@@ -31,7 +31,6 @@ const sendErrorDev = (err, req, res) => {
     });
   }
   //B) RENDERED WEBSITE
-  console.error('ERROR 💥', err)
   return res.status(err.statusCode).render('error', {
     title: 'Something went wrong!',
     msg: err.message
@@ -49,10 +48,6 @@ const sendErrorProd = (err, req, res) => {
       });
     }
     //Programming error or unknown error: sends a simple message to client, error is caused by code
-    //1) Log Error in console
-    console.error('ERROR 💥', err)
-
-    //2) Send simple message to client
    return res.status(500).json({
     status:'fail',
     message: 'something went very wrong!'
@@ -65,7 +60,6 @@ const sendErrorProd = (err, req, res) => {
         msg: err.message
       });
     }
-    console.error('ERROR 💥', err)
     return res.status(err.statusCode).render('error', {
       title: 'Something went wrong!',
       msg: 'Please try again later.'

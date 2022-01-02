@@ -152,10 +152,9 @@ toursSchema.pre(/^find/, function(next){
   next();
 })
 
-toursSchema.post(/^find/, function(docs, next){
-  console.log(`query took ${Date.now() - this.start} milliseconds`)
-  next();
-});
+// toursSchema.post(/^find/, function(docs, next){
+//   next();
+// });
 
 const Tour = mongoose.model('Tour', toursSchema);
 
