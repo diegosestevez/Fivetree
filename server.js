@@ -41,9 +41,8 @@ process.on('unhandledRejection', err => {
 
 //SIGTERM is a heroku specific event. This line prevents request from hanging when heroku's containers are restarted every 24 hours
 process.on('SIGTERM', () => {
-  console.log('SIGTERM RECEIVED. Shutting app down gracefully.')
-  server.close(() => {
-    console.log('process terminated');
-    //process.exit not necessary heroku shuts down app automatically
+  console.log('SIGTERM RECIEVED! Shutting down gracefully.')
+  server.close(() =>{
+    console.log('Process terminated.')
   })
 })

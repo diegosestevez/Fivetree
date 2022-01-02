@@ -12,15 +12,15 @@ const signToken = id => {
   })
 }
 
-const createSendToken = (user, s req,tatusCode, req, res) => {
+const createSendToken = (user, statusCode, req, res) => {
   const token = signToken(user._id)
 
   //create cookie to send to client. res.cookie(name, data, {options})
   res.cookie('jwt', token, {
     expires: new Date(Date.now() + process.env.JWT_COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000), //convert to millisecondes
-    secure: cookieOptions.secure = req.secure || req.headers('x-forwarded-proto') === 'https', //this line is specific to heroku's security deployment options. cookie can only be sent through HTTPS
-    httpOnly: true, // cookie cannot be modified by browser
-  });
+    secure: req.secure || req.headers('x-forwarded-proto') === 'https', // cookie can only be sent through HTTPS
+    httpOnly: true // cookie cannot be modified by browser
+  } );
 
   //remove password from output
   user.password = undefined;
@@ -48,7 +48,7 @@ exports.signup = catchAsync(async (req, res, next) => {
 
   await new Email(newUser, url).sendWelcome() //sends a welcome email to client
 
-  createSendToken(newUser, 2 req,01, res);
+  createSendToken(newUser, 201, req, res);
 });
 
 exports.login = catchAsync(async (req, res, next) => {
