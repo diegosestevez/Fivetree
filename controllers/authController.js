@@ -18,7 +18,7 @@ const createSendToken = (user, s req,tatusCode, req, res) => {
   //create cookie to send to client. res.cookie(name, data, {options})
   res.cookie('jwt', token, {
     expires: new Date(Date.now() + process.env.JWT_COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000), //convert to millisecondes
-    secure: cookieOptions.secure = req.secure || req.headers['x-forwarded-proto'] === 'https', //this line is specific to heroku's security deployment options. cookie can only be sent through HTTPS
+    secure: cookieOptions.secure = req.secure || req.headers('x-forwarded-proto') === 'https', //this line is specific to heroku's security deployment options. cookie can only be sent through HTTPS
     httpOnly: true, // cookie cannot be modified by browser
   });
 
