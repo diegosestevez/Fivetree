@@ -19,6 +19,7 @@ const userRouter = require(`./routes/userRoutes`);
 const reviewRouter = require('./routes/reviewRoutes');
 const viewRouter = require('./routes/viewRoutes');
 const bookingRouter = require('./routes/bookingRoutes');
+const bookingController = require('./controllers/bookingController');
 
 const app = express();
 
@@ -98,6 +99,14 @@ const limiter = rateLimit({
   message: 'Too many requests have been made from this IP. Please try again in an hour'
 })
 app.use('/api', limiter) //apply limiter to /api routes
+
+//Stripe webhooks route. Route handler below is called directly from the controller instead of routes folder because body comes in as stream format and not JSON.
+//This route also needs to be called before the body parser middlware since it will covert the body data to JSON
+app.post(
+  '/webhook-checkout',
+  express.raw({type:'application/json'}),
+  bookingController.webhookCheckout
+);
 
 //These two will tell express to read JSON payloads when they are posted to a route in req.body (bodyparser)
 app.use(express.json({ limit: '10kb' }));
