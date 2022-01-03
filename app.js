@@ -31,8 +31,9 @@ app.set('views', path.join(__dirname, 'views'));
 //Will serve static html files and their associated css and img files. The file you pass in as an argument will become the root file
 app.use(express.static(path.join(__dirname,'public')));
 
-//cors for client to server data communication using same host
+//cors for client to access data from api routes on server
 app.use(cors());
+app.options('*', cors());
 
 //Sets security HTTP headers
 app.use(
