@@ -11,16 +11,15 @@
 	<!ENTITY ns_adobe_xpath "http://ns.adobe.com/XPath/1.0/">
 ]>
 <svg version="1.1" xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;"
-	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 489 470"
-	 style="enable-background:new 0 0 489 470;" xml:space="preserve">
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 500 470"
+	 style="enable-background:new 0 0 500 470;" xml:space="preserve">
 <style type="text/css">
-	.st0{display:none;}
 	.st1{display:inline;fill:#666666;}
 	.st2{fill:#006837;}
 	.st3{fill:#009245;}
 	.st4{fill:#FFFFFF;}
-	.st5{font-family:'DINCondensed-Bold';}
-	.st6{font-size:151.9886px;}
+	.st5{font-family:'Arial Narrow', sans-serif; font-weight:700; letter-spacing: -8px;}
+	.st6{font-size:8rem;}
 </style>
 <switch>
 	<foreignObject requiredExtensions="&ns_ai;" x="0" y="0" width="1" height="1">
@@ -28,44 +27,39 @@
 		</i:aipgfRef>
 	</foreignObject>
 	<g i:extraneous="self">
-		<g id="shape" class="st0">
-		</g>
-		<g id="background" class="st0">
-			<rect x="-439" y="-126" class="st1" width="1366" height="768"/>
-		</g>
 		<g id="trees">
 			<g>
-				<polygon class="st2" points="374.6,326.6 407.4,271.4 387,271.4 420.6,226 400.3,226 420.6,186 409.1,186 433.1,140.6 
+				<polygon class="st2" points="374.6,326.6 407.4,271.4 387,271.4 420.6,226 400.3,226 420.6,186 409.1,186 433.1,140.6
 					433.1,326.6 				"/>
-				<polygon class="st3" points="492,327 458.9,271.8 479.5,271.8 445.5,226.5 466.1,226.5 445.5,186.4 457.1,186.4 433,141.1 
+				<polygon class="st3" points="492,327 458.9,271.8 479.5,271.8 445.5,226.5 466.1,226.5 445.5,186.4 457.1,186.4 433,141.1
 					433,327 				"/>
 			</g>
 			<g>
 				<polygon class="st2" points="-2.5,327 30.3,271.8 9.9,271.8 43.6,226.4 23.2,226.4 43.6,186.4 32.1,186.4 56,141 56,327 				"/>
-				<polygon class="st3" points="113.9,326.3 81.1,271.5 101.5,271.5 67.8,226.4 88.2,226.4 67.8,186.6 79.3,186.6 55.4,141.4 
+				<polygon class="st3" points="113.9,326.3 81.1,271.5 101.5,271.5 67.8,226.4 88.2,226.4 67.8,186.6 79.3,186.6 55.4,141.4
 					55.4,326.3 				"/>
 			</g>
 			<g>
-				<polygon class="st2" points="55.5,327 102,249.1 73.1,249.1 120.8,185 91.9,185 120.8,128.5 104.5,128.5 138.4,64.4 138.4,327 
+				<polygon class="st2" points="55.5,327 102,249.1 73.1,249.1 120.8,185 91.9,185 120.8,128.5 104.5,128.5 138.4,64.4 138.4,327
 									"/>
-				<polygon class="st3" points="220.9,327 174.5,249.3 203.4,249.3 155.6,185.4 184.5,185.4 155.6,129 171.9,129 138,65.1 138,327 
+				<polygon class="st3" points="220.9,327 174.5,249.3 203.4,249.3 155.6,185.4 184.5,185.4 155.6,129 171.9,129 138,65.1 138,327
 									"/>
 			</g>
 			<g>
-				<polygon class="st2" points="275.3,327 321.8,249.1 292.9,249.1 340.6,185 311.7,185 340.6,128.5 324.3,128.5 358.2,64.4 
+				<polygon class="st2" points="275.3,327 321.8,249.1 292.9,249.1 340.6,185 311.7,185 340.6,128.5 324.3,128.5 358.2,64.4
 					358.2,327 				"/>
-				<polygon class="st3" points="440.8,327 394.3,249.3 423.2,249.3 375.4,185.4 404.3,185.4 375.4,129 391.8,129 357.9,65.1 
+				<polygon class="st3" points="440.8,327 394.3,249.3 423.2,249.3 375.4,185.4 404.3,185.4 375.4,129 391.8,129 357.9,65.1
 					357.9,327 				"/>
 			</g>
 			<g>
-				<polygon class="st2" points="147.3,327 205,230.3 169.1,230.3 228.3,150.7 192.5,150.7 228.3,80.6 208.1,80.6 250.2,1 
+				<polygon class="st2" points="147.3,327 205,230.3 169.1,230.3 228.3,150.7 192.5,150.7 228.3,80.6 208.1,80.6 250.2,1
 					250.2,327 				"/>
-				<polygon class="st3" points="352.8,327 295.1,230.5 331,230.5 271.8,151.2 307.6,151.2 271.8,81.1 292,81.1 249.9,1.8 
+				<polygon class="st3" points="352.8,327 295.1,230.5 331,230.5 271.8,151.2 307.6,151.2 271.8,81.1 292,81.1 249.9,1.8
 					249.9,327 				"/>
 			</g>
 		</g>
 		<g id="_x34_Tree">
-			<text transform="matrix(1.0756 0 0 1 -4.1606 468.5684)" class="st4 st5 st6">FIVE TREE</text>
+			<text transform="matrix(1.0756 0 0 1 -10 445)" class="st4 st5 st6">FIVE TREE</text>
 		</g>
 	</g>
 </switch>

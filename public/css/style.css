@@ -54,6 +54,12 @@ body {
   background-size: cover
 }
 
+@media only screen and (max-width: 37.5em){
+  .hero{
+    background-attachment: scroll;
+  }
+}
+
 .hero_container{
   margin: 20vh auto;
   display: block;
